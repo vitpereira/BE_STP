@@ -9,7 +9,7 @@ pacman:: p_load(tidylog, magrittr, dplyr, vctrs, readr,
                 data.table, formattable, tidyr, crosstable)
 
 # Paths
-root     <- "C:/Users/vitor/Dropbox (Personal)/Sao Tome e Principe/2022/Boletim_estatisco/"
+root     <- "C:/Users/vitor/Dropbox (Personal)/Sao Tome e Principe/2022/BE_STP/"
 input    <- paste0(root, "input/")
 output   <- paste0(root, "output/")
 tmp      <- paste0(root, "tmp/")
@@ -38,8 +38,6 @@ base_codigos <- clean_names(read_xlsx(paste0(input,
   mutate(nome_da_escola3=stringr::str_trim(nome_da_escola2)) %>% 
   mutate(nome_da_escola3 = str_replace_all(nome_da_escola3, "C. P. Madalena de Canossa", "Escola Centro Promoção Madalena de Canossa"))
   
-  
-
 # Junta as bases
 base_alunos_cod <-  anti_join(base_alunos, 
                               base_codigos,
