@@ -1,0 +1,18 @@
+
+
+pacman:: p_load(magrittr, dplyr, vctrs, readr, ggplot2,
+                janitor, readxl, gt, epiDisplay,
+                data.table, formattable, tidyr, crosstable)
+
+# Paths
+root     <-  "C:/Users/vitor/Dropbox (Personal)/Sao Tome e Principe/2022/BE_STP/"
+input    <- paste0(root, "input/")
+output   <- paste0(root, "output/")
+tmp      <- paste0(root, "tmp/")
+code     <- paste0(root, "code/")
+alunos   <- paste0(root, "alunos/")
+
+# Acerta a hora de STP
+Sys.setenv(TZ="UCT")
+#######################################
+base_alunos<- readRDS(paste0(input,"alunos_todos_v2.RData"))
